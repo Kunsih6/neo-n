@@ -1,8 +1,9 @@
 export default {
-  page: {
-    home: {
-      title: 'Home',
-    },
+  hero: {
+    title: 'Web solutions creator',
+    action: "Let's talk!",
   },
-  welcome: 'Welcome',
+  myWork: {
+    title: 'My work',
+  },
 }

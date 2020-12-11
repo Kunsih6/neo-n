@@ -25,7 +25,11 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: [
+    '~/assets/styles/base.pcss',
+    '~/assets/styles/fonts.pcss',
+    '~/assets/styles/typography.pcss',
+  ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['~/plugins/i18n'],
@@ -41,6 +45,8 @@ export default {
     '@nuxtjs/ngrok',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    // https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],

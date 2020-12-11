@@ -1,8 +1,6 @@
 export default {
-  page: {
-    home: {
-      title: 'Inicio',
-    },
+  hero: {
+    title: 'Creador de soluciones web',
+    action: 'Hablemos',
   },
-  welcome: 'Bienvenido',
 }

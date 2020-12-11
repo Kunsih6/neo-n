@@ -1,0 +1,59 @@
+html {
+  @apply text-white;
+
+  font-size: 0.46em;
+}
+
+h1 {
+  @apply font-bold leading-tight text-4xl tracking-widest uppercase;
+}
+
+h2 {
+  @apply font-bold leading-tight text-2xl tracking-widest;
+}
+
+a,
+b,
+li,
+p,
+strong {
+  @apply text-2xl;
+}
+
+a,
+li,
+p,
+span {
+  @apply font-normal;
+}
+
+b,
+strong {
+  @apply font-bold text-primary;
+}
+
+@screen sm {
+  html {
+    font-size: 0.625em;
+  }
+}
+
+@screen lg {
+  html {
+    font-size: 1em;
+  }
+
+  a,
+  b,
+  li,
+  p,
+  strong {
+    @apply text-lg;
+  }
+}
+
+@screen 4xl {
+  html {
+    font-size: 1.5em;
+  }
+}
