@@ -12,9 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node:
-          - 12
-          - 14
+        node: [12]
 
     steps:
       - name: Checkout 🛎
@@ -45,7 +43,7 @@ jobs:
         run: yarn lint
 
       - name: Install functions dependencies
-        run: yarn --cwd functions
+        run: npm install --prefix functions
 
       - name: Deploy to firebase
         uses: w9jds/firebase-action@master
