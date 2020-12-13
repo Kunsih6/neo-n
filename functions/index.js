@@ -25,4 +25,4 @@ async function handleRequest(req, res) {
   await nuxt.render(req, res)
 }
 
-exports.ssrapp = functions.https.onRequest(handleRequest)
+exports.nuxtApp = functions.https.onRequest(handleRequest)
