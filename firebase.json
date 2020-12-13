@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "source": "functions",
+    "predeploy": ["yarn predeploy:functions"]
+  },
+  "hosting": {
+    "predeploy": ["yarn predeploy:hosting"],
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "nuxtApp"
+      }
+    ]
+  }
+}

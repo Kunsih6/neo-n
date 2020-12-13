@@ -9,7 +9,9 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
-    "lint": "yarn lint:js && yarn lint:style"
+    "lint": "yarn lint:js && yarn lint:style",
+    "predeploy:functions": "rm -rf functions/.nuxt && yarn build && mkdir -p functions/.nuxt/dist && cp -r .nuxt/dist/ functions/.nuxt/",
+    "predeploy:hosting": "rm -rf public/* && mkdir -p public/nuxt && cp -r functions/.nuxt/dist/client/ public/nuxt && cp -a static/. public/"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
