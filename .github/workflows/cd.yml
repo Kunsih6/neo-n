@@ -1,17 +1,12 @@
-name: ci
+name: Deploy to firebase
 
 on:
   push:
     branches:
       - main
-      - master
-  pull_request:
-    branches:
-      - main
-      - master
 
 jobs:
-  ci:
+  cd:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -47,3 +42,9 @@ jobs:
       - name: Run linter 👀
         run: yarn lint
 
+      - name: Deploy to firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting,functions
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
