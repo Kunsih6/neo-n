@@ -2,7 +2,13 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        layout: "url('~@/assets/images/neon-bg.jpg')",
+        layout: `linear-gradient(
+                  to top,
+                  rgba(7, 11, 35, 1) 0%,
+                  rgba(7, 11, 35, 0.8) 35%,
+                  rgba(7, 11, 35, 0.5) 65%,
+                  rgba(7, 11, 35, 0.25) 100%),
+                 url('~@/assets/images/neon-bg.jpg')`,
       }),
       colors: {
         bg: '#070b23',

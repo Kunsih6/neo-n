@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <LayoutBackground class="layout__bg" />
+    <div class="layout__bg" />
     <LayoutMobileNavTrigger
       v-model="mobileMenuShowing"
       class="layout__mobile-nav-trigger"
@@ -62,7 +62,7 @@ export default {
   @apply relative;
 
   &__bg {
-    @apply fixed h-screen w-screen -z-10;
+    @apply -z-10 bg-center bg-cover bg-layout fixed h-screen w-screen;
   }
 
   &__desktop-nav {
