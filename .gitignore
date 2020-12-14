@@ -91,3 +91,4 @@ sw.*
 
 # deployment
 /public
+/.firebase

@@ -43,7 +43,7 @@ jobs:
         run: yarn lint
 
       - name: Install functions dependencies
-        run: npm install --prefix functions
+        run: cd functions && npm install && cd ..
 
       - name: Deploy to firebase
         uses: w9jds/firebase-action@master

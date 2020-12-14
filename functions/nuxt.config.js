@@ -1,4 +1,5 @@
-module.export = {
+/* eslint-disable */
+module.exports = {
   server: {
     host: '0.0.0.0',
   },
