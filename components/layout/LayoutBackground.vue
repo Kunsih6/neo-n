@@ -1,17 +1,9 @@
 <template>
-  <figure class="layout-bg">
-    <img
-      class="layout-bg__img"
-      src="~/assets/images/neon-bg.jpg"
-      alt="background"
-    />
-  </figure>
+  <div class="layout-bg" />
 </template>
 <style lang="postcss" scoped>
 .layout-bg {
-  &__img {
-    @apply absolute h-full object-cover w-full;
-  }
+  @apply bg-center bg-cover bg-layout;
 
   &::after {
     @apply w-full h-full fixed block;

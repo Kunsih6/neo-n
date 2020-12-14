@@ -1,6 +1,9 @@
 module.exports = {
   theme: {
     extend: {
+      backgroundImage: (theme) => ({
+        layout: "url('~@/assets/images/neon-bg.jpg')",
+      }),
       colors: {
         bg: '#070b23',
         primary: {
