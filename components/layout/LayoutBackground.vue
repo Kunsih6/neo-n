@@ -6,7 +6,7 @@
   @apply bg-center bg-cover bg-layout;
 
   &::after {
-    @apply w-full h-full fixed block;
+    @apply block fixed h-120 w-full;
 
     background: linear-gradient(
       0deg,

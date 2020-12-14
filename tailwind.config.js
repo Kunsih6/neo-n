@@ -45,8 +45,8 @@ module.exports = {
       letterSpacing: {
         logo: '0.36em',
       },
-      minHeight: {
-        'mobile-nav': '30vh',
+      height: {
+        120: '120%',
       },
       minWidth: {
         'button-decorator': '2rem',
