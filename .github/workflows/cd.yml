@@ -45,10 +45,7 @@ jobs:
       - name: Run linter 👀
         run: yarn lint
 
-      - name: Install functions dependencies
-        run: cd functions && npm install && cd ..
-
-      - name: Deploy to firebase
+      - name: Deploy to firebase 🔥
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting,functions

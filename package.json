@@ -10,6 +10,7 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style",
+    "predeploy:merge-deps": "cd functions && node merge-dependencies.js && npm install && cd ..",
     "predeploy:functions": "rm -rf functions/.nuxt && yarn build && mkdir -p functions/.nuxt/dist && cp -r .nuxt/dist/ functions/.nuxt/ && babel configs/ --out-dir functions/configs && babel nuxt.config.js --out-file functions/nuxt.config.js",
     "predeploy:hosting": "rm -rf public/* && mkdir -p public/nuxt && cp -r functions/.nuxt/dist/client/ public/nuxt && cp -a static/. public/"
   },

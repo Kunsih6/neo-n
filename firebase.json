@@ -1,7 +1,7 @@
 {
   "functions": {
     "source": "functions",
-    "predeploy": ["yarn predeploy:functions"]
+    "predeploy": ["yarn predeploy:merge-deps", "yarn predeploy:functions"]
   },
   "hosting": {
     "predeploy": ["yarn predeploy:hosting"],
