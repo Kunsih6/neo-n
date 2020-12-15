@@ -1,11 +1,19 @@
 <template>
-  <div class="button-action">
+  <div :class="{ 'button-action': !noDecorator }">
     <slot />
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    noDecorator: {
+      default: false,
+      required: false,
+      type: Boolean,
+    },
+  },
+}
 </script>
 
 <style lang="postcss" scoped>
@@ -27,7 +35,7 @@ export default {}
   }
 
   &::before {
-    @apply -bottom-1 h-1 left-2/4 w-3/12;
+    @apply -bottom-1 h-1 left-2/4 w-8;
 
     clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
   }

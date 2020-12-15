@@ -1,12 +1,24 @@
 <template>
-  <div class="navbar">
+  <div v-editable="blok" class="navbar">
     <div class="navbar__container">
-      <span class="navbar__title">Kunsih</span>
-      <LayoutNavLinks class="navbar__links" />
-      <LayoutSocials class="navbar__socials" />
+      <StoryHeadline :blok="blok.name[0]" class="navbar__title" />
+      <LayoutNavLinks :sections="blok.sections" class="navbar__links" />
+      <LayoutSocials :socials="blok.socials" class="navbar__socials" />
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    blok: {
+      default: null,
+      required: true,
+      type: Object,
+    },
+  },
+}
+</script>
 
 <style lang="postcss" scoped>
 .navbar {

@@ -1,12 +1,35 @@
 <template>
   <ul class="layout-nav-links">
-    <li class="layout-nav-links__link">My work</li>
-    <li class="layout-nav-links__link">About me</li>
+    <li
+      v-for="(section, i) in sections"
+      :key="section.to + i"
+      v-editable="section"
+      class="layout-nav-links__link"
+      @click="scrollTo(section.to)"
+    >
+      {{ section.label }}
+    </li>
   </ul>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    sections: {
+      default: () => [],
+      required: true,
+      type: Array,
+    },
+  },
+  methods: {
+    scrollTo(section) {
+      const el = document.getElementById(section)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      }
+    },
+  },
+}
 </script>
 
 <style lang="postcss" scoped>

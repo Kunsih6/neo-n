@@ -32,7 +32,11 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/i18n'],
+  plugins: [
+    '~/plugins/i18n',
+    '~/plugins/composition-api',
+    '~/plugins/storyblok-rich-text-renderer',
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -57,6 +61,13 @@ export default {
     'nuxt-i18n',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: process.env.STORYBLOK_KEY,
+        cacheProvider: 'memory',
+      },
+    ],
   ],
 
   ...configs,

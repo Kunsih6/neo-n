@@ -1,22 +1,24 @@
 <template>
   <ul class="layout-socials">
-    <li>
-      <a href="#">
-        <UtilIcon class="layout-socials__icon" name="twitter" />
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <UtilIcon class="layout-socials__icon" name="github" />
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <UtilIcon class="layout-socials__icon" name="linkedin" />
-      </a>
+    <li v-for="(social, i) in socials" :key="social.name + i">
+      <StoryExternalLink :blok="social" no-decorator>
+        <UtilIcon class="layout-socials__icon" :name="social.name" />
+      </StoryExternalLink>
     </li>
   </ul>
 </template>
+
+<script>
+export default {
+  props: {
+    socials: {
+      default: () => [],
+      required: true,
+      type: Array,
+    },
+  },
+}
+</script>
 
 <style lang="postcss" scoped>
 .layout-socials {

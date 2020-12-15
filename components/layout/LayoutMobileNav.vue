@@ -1,16 +1,23 @@
 <template>
-  <div class="mobile-nav" @click.self="close">
+  <div v-editable="blok" class="mobile-nav" @click.self="close">
     <div class="mobile-nav__content" @click="close">
       <div class="mobile-nav__container">
-        <span class="mobile-nav__title">Kunsih</span>
-        <LayoutNavLinks class="mobile-nav__links" />
-        <LayoutSocials />
+        <StoryHeadline :blok="blok.name[0]" class="mobile-nav__title" />
+        <LayoutNavLinks :sections="blok.sections" class="mobile-nav__links" />
+        <LayoutSocials :socials="blok.socials" />
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
+  props: {
+    blok: {
+      default: null,
+      required: true,
+      type: Object,
+    },
+  },
   methods: {
     close() {
       this.$emit('close')

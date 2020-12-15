@@ -1,18 +1,26 @@
 <template>
-  <div class="hero">
+  <div v-editable="blok" class="hero">
     <div class="hero__container">
-      <h1 class="hero__title">{{ $t('hero.title') }}</h1>
-      <UtilActionButton>
-        <a class="button" href="#">
-          {{ $t('hero.action') }}
-        </a>
-      </UtilActionButton>
+      <h1 class="hero__title">
+        <StoryHeadline :blok="blok.headline[0]" />
+      </h1>
+      <StoryExternalLink :blok="blok.action[0]">
+        {{ blok.action[0].label }}
+      </StoryExternalLink>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    blok: {
+      default: null,
+      required: true,
+      type: Object,
+    },
+  },
+}
 </script>
 
 <style lang="postcss" scoped>

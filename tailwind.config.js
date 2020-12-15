@@ -55,7 +55,7 @@ module.exports = {
         120: '120%',
       },
       minWidth: {
-        'button-decorator': '2rem',
+        'button-decorator': '4rem',
       },
       screens: {
         '3xl': '1800px',
