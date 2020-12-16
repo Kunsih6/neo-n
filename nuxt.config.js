@@ -9,7 +9,10 @@ export default {
   publicRuntimeConfig: {
     // https://i18n.nuxtjs.org/seo#requirements
     i18n: {
-      baseUrl: 'http://localhost:3000',
+      baseUrl:
+        process.env.NODE_ENV === 'production'
+          ? 'https://kunsih-neo-n.web.app/'
+          : 'http://localhost:3000',
     },
   },
 
