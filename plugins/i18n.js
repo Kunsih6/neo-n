@@ -19,8 +19,9 @@ export default function ({ app, store }, inject) {
   }
 
   // Called right after a new locale has benn set
-  // app.i18n.onLanguageSwitched = (oldLocale, newLocale) => {
-  // }
+  app.i18n.onLanguageSwitched = (oldLocale, newLocale) => {
+    store.dispatch('layout/fetch')
+  }
 
   // Current locale object, not just the code, available everywhere using $currentLocale()
   inject('currentLocale', () => currentLocale)

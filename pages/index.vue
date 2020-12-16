@@ -38,6 +38,8 @@ export default {
   },
   methods: {
     storyblokEvent(event) {
+      event.stopPropagation()
+      event.preventDefault()
       if (event.action === 'input') {
         if (event.story.id === this.layoutStoryId) {
           this.$store.dispatch('layout/updateStoryContent', event.story.content)

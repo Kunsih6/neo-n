@@ -1,5 +1,5 @@
 <template>
-  <section v-if="section" :id="section.id" v-editable="section" class="section">
+  <section v-if="section" :id="section.id" class="section">
     <div class="section__container">
       <component
         :is="getComponentName(c.component)"

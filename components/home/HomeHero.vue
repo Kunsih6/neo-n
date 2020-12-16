@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="hero">
+  <div class="hero">
     <div class="hero__container">
       <h1 class="hero__title">
         <StoryHeadline :blok="blok.headline[0]" />

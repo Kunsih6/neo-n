@@ -1,9 +1,14 @@
 <template>
-  <footer v-editable="blok" class="layout-footer">
+  <footer class="layout-footer">
     <div class="layout-footer__decoration-top" />
     <div class="layout-footer__container">
-      <StoryExternalLink :blok="blok.email[0]" no-decorator>
-        {{ blok.email[0].label }}
+      <StoryExternalLink
+        v-for="(link, i) in links"
+        :key="i"
+        :blok="link"
+        no-decorator
+      >
+        {{ link.label }}
       </StoryExternalLink>
       <div class="layout-footer__languages">
         <nuxt-link
@@ -21,13 +26,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  props: {
-    blok: {
-      default: null,
-      required: true,
-      type: Object,
-    },
+  computed: {
+    ...mapGetters({
+      links: 'layout/getLinks',
+    }),
   },
 }
 </script>

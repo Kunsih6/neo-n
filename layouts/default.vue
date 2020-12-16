@@ -6,20 +6,17 @@
       class="layout__mobile-nav-trigger"
     />
     <LayoutMobileNav
-      :blok="navbar"
       :class="{ 'layout__mobile-nav--open': mobileMenuShowing }"
       class="layout__mobile-nav"
       @close="mobileMenuShowing = false"
     />
-    <LayoutDesktopNav :blok="navbar" class="layout__desktop-nav" />
+    <LayoutDesktopNav class="layout__desktop-nav" />
     <Nuxt />
-    <LayoutFooter :blok="footer" class="layout__footer" />
+    <LayoutFooter class="layout__footer" />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
   data() {
     return {
@@ -45,12 +42,6 @@ export default {
       },
       link: [...i18nSeo.link],
     }
-  },
-  computed: {
-    ...mapGetters({
-      footer: 'layout/getFooter',
-      navbar: 'layout/getNavbar',
-    }),
   },
   mounted() {
     window.addEventListener('resize', this.onResize)

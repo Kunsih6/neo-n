@@ -9,13 +9,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  props: {
-    socials: {
-      default: () => [],
-      required: true,
-      type: Array,
-    },
+  computed: {
+    ...mapGetters({
+      socials: 'layout/getSocials',
+    }),
   },
 }
 </script>

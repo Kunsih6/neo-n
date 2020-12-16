@@ -3,11 +3,22 @@ export const state = () => ({
 })
 
 export const getters = {
-  getFooter(state) {
-    return state.story.content.footer[0]
+  getName(state) {
+    return state.story.content.name.length > 0
+      ? state.story.content.name[0]
+      : null
+  },
+  getLinks(state) {
+    return state.story.content.links
   },
   getNavbar(state) {
     return state.story.content.navbar[0]
+  },
+  getSections(state) {
+    return state.story.content.sections
+  },
+  getSocials(state) {
+    return state.story.content.socials
   },
   getStoryId(state) {
     return state.story.id

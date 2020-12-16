@@ -1,22 +1,24 @@
 <template>
-  <div v-editable="blok" class="mobile-nav" @click.self="close">
+  <div class="mobile-nav" @click.self="close">
     <div class="mobile-nav__content" @click="close">
       <div class="mobile-nav__container">
-        <StoryHeadline :blok="blok.name[0]" class="mobile-nav__title" />
-        <LayoutNavLinks :sections="blok.sections" class="mobile-nav__links" />
-        <LayoutSocials :socials="blok.socials" />
+        <div class="mobile-nav__title">
+          <StoryHeadline :blok="name" />
+        </div>
+        <LayoutNavLinks class="mobile-nav__links" />
+        <LayoutSocials />
       </div>
     </div>
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  props: {
-    blok: {
-      default: null,
-      required: true,
-      type: Object,
-    },
+  computed: {
+    ...mapGetters({
+      name: 'layout/getName',
+    }),
   },
   methods: {
     close() {

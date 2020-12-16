@@ -13,13 +13,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  props: {
-    sections: {
-      default: () => [],
-      required: true,
-      type: Array,
-    },
+  computed: {
+    ...mapGetters({
+      sections: 'layout/getSections',
+    }),
   },
   methods: {
     scrollTo(section) {

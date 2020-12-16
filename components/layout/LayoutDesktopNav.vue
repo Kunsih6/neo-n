@@ -1,21 +1,23 @@
 <template>
-  <div v-editable="blok" class="navbar">
+  <div class="navbar">
     <div class="navbar__container">
-      <StoryHeadline :blok="blok.name[0]" class="navbar__title" />
-      <LayoutNavLinks :sections="blok.sections" class="navbar__links" />
-      <LayoutSocials :socials="blok.socials" class="navbar__socials" />
+      <div class="navbar__title">
+        <StoryHeadline :blok="name" />
+      </div>
+      <LayoutNavLinks class="navbar__links" />
+      <LayoutSocials class="navbar__socials" />
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  props: {
-    blok: {
-      default: null,
-      required: true,
-      type: Object,
-    },
+  computed: {
+    ...mapGetters({
+      name: 'layout/getName',
+    }),
   },
 }
 </script>
