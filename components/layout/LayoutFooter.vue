@@ -5,6 +5,16 @@
       <StoryExternalLink :blok="blok.email[0]" no-decorator>
         {{ blok.email[0].label }}
       </StoryExternalLink>
+      <div class="layout-footer__languages">
+        <nuxt-link
+          v-for="locale in $i18n.locales"
+          :key="locale.code"
+          :to="switchLocalePath(locale.code)"
+          class="layout-footer__language"
+        >
+          {{ locale.name }}
+        </nuxt-link>
+      </div>
     </div>
     <div class="layout-footer__decoration-bottom" />
   </footer>
@@ -25,7 +35,7 @@ export default {
 <style lang="postcss" scoped>
 .layout-footer {
   &__container {
-    @apply container mx-auto text-center py-12;
+    @apply container mx-auto text-center py-6;
   }
 
   &__decoration-bottom {
@@ -60,6 +70,18 @@ export default {
       25% 60%,
       0% 60%
     );
+  }
+
+  &__language {
+    @apply text-base;
+  }
+
+  &__languages {
+    @apply flex items-center justify-center mt-6;
+  }
+
+  &__language:not(:last-child) {
+    @apply mr-6;
   }
 }
 

@@ -24,6 +24,7 @@ export default {
   &::before {
     @apply block absolute
       bg-gradient-to-r from-secondary to-secondary-dark
+      bg-center
       transform -translate-x-2/4;
 
     content: '';
@@ -37,6 +38,7 @@ export default {
   &::before {
     @apply -bottom-1 h-1 left-2/4 w-8;
 
+    background-size: 150%;
     clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
   }
 
