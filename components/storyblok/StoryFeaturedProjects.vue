@@ -15,17 +15,22 @@
       v-if="blok.projects[selected].image.filename"
       class="story-featured-projects__preview"
     >
-      <img
+      <StoryExternalLink
         v-for="(p, i) in blok.projects"
         :key="p._uid + 'img'"
-        :class="{
-          'story-featured-projects__preview-img--active': i === selected,
-        }"
-        :src="p.image.filename"
-        alt="preview"
-        class="story-featured-projects__preview-img"
-        loading="lazy"
-      />
+        :blok="p"
+        no-decorator
+      >
+        <img
+          :class="{
+            'story-featured-projects__preview-img--active': i === selected,
+          }"
+          :src="p.image.filename"
+          alt="preview"
+          class="story-featured-projects__preview-img"
+          loading="lazy"
+        />
+      </StoryExternalLink>
     </figure>
   </div>
 </template>
@@ -82,10 +87,8 @@ export default {
 
     &::after,
     &::before {
-      @apply absolute block bg-gradient-to-r from-primary-dark via-primary to-primary-dark h-4 w-full z-10 left-0;
+      @apply absolute block bg-gradient-to-r from-primary via-primary-dark to-primary h-4 w-full z-10 left-0;
 
-      animation: gradientTransition 4s infinite linear forwards;
-      background-size: 400% 100%;
       content: '';
       clip-path: polygon(
         0% 40%,
@@ -148,15 +151,6 @@ export default {
     &__item:hover {
       background-position: 0 0;
     }
-  }
-}
-
-@keyframes gradientTransition {
-  0% {
-    background-position: 0% 0;
-  }
-  100% {
-    background-position: 133% 0;
   }
 }
 </style>
