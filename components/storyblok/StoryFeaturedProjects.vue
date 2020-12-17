@@ -19,17 +19,13 @@
         v-for="(p, i) in blok.projects"
         :key="p._uid + 'img'"
         :blok="p"
+        :class="{
+          'story-featured-projects__preview-img--active': i === selected,
+        }"
+        class="story-featured-projects__preview-img"
         no-decorator
       >
-        <img
-          :class="{
-            'story-featured-projects__preview-img--active': i === selected,
-          }"
-          :src="p.image.filename"
-          alt="preview"
-          class="story-featured-projects__preview-img"
-          loading="lazy"
-        />
+        <img :src="p.image.filename" alt="preview" loading="lazy" />
       </StoryExternalLink>
     </figure>
   </div>
@@ -112,10 +108,10 @@ export default {
   }
 
   &__preview-img {
-    @apply -left-2/4 -top-2/4 absolute h-full object-cover opacity-0 transition-all duration-700 w-full transform translate-x-2/4 translate-y-2/4;
+    @apply -left-2/4 -top-2/4 absolute h-full object-cover opacity-0 transition-all duration-700 w-full transform translate-x-2/4 translate-y-2/4 -z-10;
 
     &--active {
-      @apply opacity-100;
+      @apply opacity-100 z-0;
     }
   }
 }
