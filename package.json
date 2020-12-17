@@ -1,5 +1,7 @@
 {
-  "name": "neo-n",
+  "name": "kunsih",
+  "author": "Estuardo Aguirre (https://github.com/Kunsih6)",
+  "description": "Web solutions developer",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -25,10 +27,8 @@
     }
   },
   "dependencies": {
-    "@marvr/storyblok-rich-text-vue-renderer": "^2.0.1",
     "@nuxtjs/ngrok": "^2.0.0",
     "@nuxtjs/pwa": "^3.0.2",
-    "@vue/composition-api": "^1.0.0-beta.21",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.11",
     "nuxt-i18n": "^6.16.0",
