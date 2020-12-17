@@ -1,5 +1,6 @@
 export default {
-  action: {
-    view: 'View',
+  meta: {
+    title: 'Kunsih | Web solutions creator',
+    description: 'Computer science engineer and web developer',
   },
 }

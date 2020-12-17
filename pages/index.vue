@@ -22,15 +22,18 @@ export default {
   },
   head() {
     return {
-      title: 'Kunsih',
+      title: this.title,
+      meta: [...this.metatags],
     }
   },
   computed: {
     ...mapGetters({
       hero: 'home/getHero',
+      metatags: 'home/getMetatags',
       sections: 'home/getSections',
       homeStoryId: 'home/getStoryId',
       layoutStoryId: 'layout/getStoryId',
+      title: 'home/getTitle',
     }),
   },
   mounted() {
@@ -38,8 +41,6 @@ export default {
   },
   methods: {
     storyblokEvent(event) {
-      event.stopPropagation()
-      event.preventDefault()
       if (event.action === 'input') {
         if (event.story.id === this.layoutStoryId) {
           this.$store.dispatch('layout/updateStoryContent', event.story.content)

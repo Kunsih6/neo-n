@@ -27,13 +27,12 @@ export default {
     const i18nSeo = this.$nuxtI18nSeo()
 
     return {
-      title: 'Web developer',
-      titleTemplate: '%s | Web developer',
+      title: this.$t('meta.title'),
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'My website description',
+          content: this.$t('meta.description'),
         },
         ...i18nSeo.meta,
       ],

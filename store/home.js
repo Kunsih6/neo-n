@@ -1,8 +1,13 @@
+import getMetatags from '~/usables/getMetatags'
+
 export const state = () => ({
   story: { content: {} },
 })
 
 export const getters = {
+  getMetatags(state) {
+    return getMetatags(state.story.content)
+  },
   getHero(state) {
     return state.story.content.hero[0]
   },
@@ -11,6 +16,9 @@ export const getters = {
   },
   getStoryId(state) {
     return state.story.id
+  },
+  getTitle(state) {
+    return state.story.content.title || ''
   },
 }
 
