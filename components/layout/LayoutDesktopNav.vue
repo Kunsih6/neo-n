@@ -32,7 +32,7 @@ export default {
   }
 
   &__title {
-    @apply 3xl:text-xl flex-1 font-logo justify-end min-w-min text-white text-xl tracking-logo;
+    @apply 3xl:text-2xl flex-1 font-logo justify-end min-w-min text-white text-xl tracking-logo;
   }
 }
 </style>

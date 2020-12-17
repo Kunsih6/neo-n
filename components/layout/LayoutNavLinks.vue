@@ -44,7 +44,7 @@ export default {
     @apply flex items-center justify-center;
 
     &__link {
-      @apply cursor-pointer text-base py-1 px-3;
+      @apply cursor-pointer text-lg py-1 px-3;
     }
 
     > *:not(:last-child) {
