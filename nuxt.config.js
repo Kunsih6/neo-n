@@ -2,6 +2,7 @@ import * as configs from './configs'
 
 export default {
   server: {
+    port: '3000',
     host: '0.0.0.0',
   },
 
@@ -35,11 +36,7 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [
-    '~/plugins/i18n',
-    '~/plugins/composition-api',
-    '~/plugins/storyblok-rich-text-renderer',
-  ],
+  plugins: ['~/plugins/i18n'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
