@@ -78,7 +78,7 @@ export default {
   }
 
   &__language {
-    @apply text-base;
+    @apply text-xl md:text-base;
   }
 
   &__languages {
