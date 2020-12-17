@@ -10,6 +10,7 @@ on:
 
 jobs:
   cd:
+    environment: cd
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -51,3 +52,5 @@ jobs:
           args: deploy --only hosting,functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          HOST: ${{ secrets.HOST }}
+          STORYBLOK_KEY: ${{ secrets.STORYBLOK_KEY }}
