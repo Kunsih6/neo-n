@@ -13,11 +13,14 @@ export default function (c) {
     property: 'og:description',
     content: c.description,
   })
-  tags.push({
-    hid: 'og:image',
-    property: 'og:image',
-    content: c.og_image.filename || c.tw_image.filename,
-  })
+
+  if (c.og_image || c.tw_image) {
+    tags.push({
+      hid: 'og:image',
+      property: 'og:image',
+      content: (c.og_image || c.tw_image).filename,
+    })
+  }
 
   // Twitter
   tags.push({
@@ -41,10 +44,13 @@ export default function (c) {
     name: 'twitter:description',
     content: c.description,
   })
-  tags.push({
-    hid: 'twitter:image',
-    name: 'twitter:image',
-    content: c.tw_image.filename || c.og_image.filename,
-  })
+
+  if (c.tw_image || c.og_image) {
+    tags.push({
+      hid: 'twitter:image',
+      name: 'twitter:image',
+      content: (c.tw_image || c.og_image).filename,
+    })
+  }
   return tags
 }
