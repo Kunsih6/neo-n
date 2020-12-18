@@ -1,6 +1,6 @@
 <template>
   <main class="home">
-    <HomeHero :blok="hero" />
+    <HomeHero v-if="hero" :blok="hero" />
     <template v-for="section in sections">
       <UtilPageDivider :key="section._uid + 'divider'" />
       <HomeSection

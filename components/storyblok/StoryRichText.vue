@@ -1,7 +1,7 @@
 <template>
   <div v-editable="blok" class="story-rich-text">
     <!-- eslint-disable-next-line -->
-    <div v-html="$storyapi.richTextResolver.render(this.blok.content)" />
+    <div v-html="$storyapi.richTextResolver.render(blok.content)" />
     <!-- <rich-text-renderer :document="blok.content" /> -->
   </div>
 </template>

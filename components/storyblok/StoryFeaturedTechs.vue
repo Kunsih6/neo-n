@@ -27,7 +27,7 @@ export default {
 <style lang="postcss" scoped>
 .story-featured-techs {
   &__container {
-    @apply container mx-auto grid grid-cols-5 gap-16 items-center justify-center;
+    @apply container mx-auto grid grid-cols-5 gap-16 items-center justify-center max-w-4xl;
   }
 
   &__icon {

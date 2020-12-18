@@ -9,7 +9,9 @@ export const getters = {
     return getMetatags(state.story.content)
   },
   getHero(state) {
-    return state.story.content.hero[0]
+    return state.story.content.hero && state.story.content.hero.length > 0
+      ? state.story.content.hero[0]
+      : null
   },
   getSections(state) {
     return state.story.content.sections
