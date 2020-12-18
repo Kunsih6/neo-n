@@ -5,7 +5,7 @@
       <h2 v-if="error.statusCode === 404">{{ $t('error.404') }}</h2>
       <h2 v-else>{{ $t('error.generic') }}</h2>
       <UtilActionButton class="mt-16">
-        <NuxtLink :to="localePath({ name: index })">
+        <NuxtLink :to="localePath({ name: 'index' })">
           {{ $t('action.backToHome') }}
         </NuxtLink>
       </UtilActionButton>

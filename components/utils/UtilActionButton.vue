@@ -18,7 +18,7 @@ export default {
 
 <style lang="postcss" scoped>
 .button-action {
-  @apply cursor-pointer pb-0 pt-1 px-2 relative;
+  @apply cursor-pointer pb-0 pt-1 px-2 relative text-center;
 
   &::after,
   &::before {

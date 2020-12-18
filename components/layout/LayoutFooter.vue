@@ -1,5 +1,13 @@
 <template>
   <footer class="layout-footer">
+    <div
+      :class="{ 'opacity-100': show }"
+      :to="localePath({ name: 'easter' })"
+      class="absolute left-0 bottom-2 z-10 cursor-default opacity-0 transition-all duration-150"
+      @click="$router.push(localePath({ name: 'easter' }))"
+    >
+      <img src="~/assets/images/easter.png" class="w-32" alt="easter" />
+    </div>
     <div class="layout-footer__decoration-top" />
     <div class="layout-footer__container">
       <StoryExternalLink
@@ -29,16 +37,41 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  data() {
+    return {
+      timer: null,
+      show: false,
+    }
+  },
   computed: {
     ...mapGetters({
       links: 'layout/getLinks',
     }),
+  },
+  mounted() {
+    const observer = new IntersectionObserver((entries) => {
+      const firstEntry = entries[0]
+      if (firstEntry.isIntersecting) {
+        setTimeout(() => {
+          this.show = true
+        }, 30 * 1000)
+      }
+
+      if (!firstEntry.intersectionRatio) {
+        clearTimeout(this.timer)
+        this.show = false
+      }
+    })
+
+    observer.observe(this.$el)
   },
 }
 </script>
 
 <style lang="postcss" scoped>
 .layout-footer {
+  @apply relative;
+
   &__container {
     @apply container mx-auto text-center py-6;
   }
