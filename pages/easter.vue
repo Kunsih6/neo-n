@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container mx-auto min-h-screen py-24 flex flex-col justify-center items-center"
+    class="container mx-auto min-h-screen py-24 flex flex-col justify-center items-center text-center"
   >
     <div v-if="authenticated">
       <!-- eslint-disable-next-line -->
@@ -48,9 +48,9 @@ export default {
     this.content = content
     this.authenticated = true
 
-    const options = content.key.split(', ').map((el) => el.trim())
+    const options = content.key.split(', ').map((el) => el.trim().toLowerCase())
     const username = prompt('Cómo te llaman?')
-    if (options.includes(username)) {
+    if (options.includes(username.toLowerCase())) {
       this.authenticated = true
     } else {
       this.$router.replace(this.localePath({ name: 'index' }))
