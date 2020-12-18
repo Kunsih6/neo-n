@@ -48,13 +48,13 @@ export default {
     this.content = content
     this.authenticated = true
 
-    // const options = content.key.split(', ').map((el) => el.trim())
-    // const username = prompt('Cómo te llaman?')
-    // if (options.includes(username)) {
-    //   this.authenticated = true
-    // } else {
-    //   this.$router.replace(this.localePath({ name: 'index' }))
-    // }
+    const options = content.key.split(', ').map((el) => el.trim())
+    const username = prompt('Cómo te llaman?')
+    if (options.includes(username)) {
+      this.authenticated = true
+    } else {
+      this.$router.replace(this.localePath({ name: 'index' }))
+    }
   },
 }
 </script>
