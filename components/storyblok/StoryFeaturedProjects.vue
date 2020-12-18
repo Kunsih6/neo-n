@@ -81,6 +81,10 @@ export default {
   &__preview {
     @apply mt-8 mx-auto pt-16/9 relative w-full;
 
+    img {
+      @apply h-full object-cover w-full;
+    }
+
     &::after,
     &::before {
       @apply absolute block bg-gradient-to-r from-primary via-primary-dark to-primary h-4 w-full z-10 left-0;
